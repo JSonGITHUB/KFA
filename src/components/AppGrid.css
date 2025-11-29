@@ -1,0 +1,123 @@
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app-card {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+}
+
+.app-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: white;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-button:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+}
+
+.app-button:active {
+  transform: scale(0.98);
+}
+
+.app-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.app-card:hover .app-icon {
+  transform: scale(1.1);
+}
+
+.app-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.app-category {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.add-to-category-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-category-btn:hover {
+  transform: scale(1.1);
+}
+
+.no-apps {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.no-apps-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.no-apps p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .app-button {
+    padding: 1rem 0.5rem;
+  }
+
+  .app-icon {
+    font-size: 2.5rem;
+  }
+
+  .app-name {
+    font-size: 0.85rem;
+  }
+}
