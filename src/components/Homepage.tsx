@@ -18,7 +18,12 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     const storedCategories = localStorage.getItem(CATEGORIES_STORAGE_KEY);
     if (storedCategories) {
-      setCategories(JSON.parse(storedCategories));
+      try {
+        setCategories(JSON.parse(storedCategories));
+      } catch (e) {
+        // If JSON is malformed, start with empty categories
+        console.error('Failed to parse stored categories:', e);
+      }
     }
   }, []);
 
@@ -29,7 +34,7 @@ const Homepage: React.FC = () => {
 
   const handleCategoryCreate = (name: string) => {
     const newCategory: Category = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       name,
       apps: []
     };
